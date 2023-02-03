@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Itinerary</title>
+  <style>
+    /* card container */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 375px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+/* departure time */
+.card-time {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* journey steps */
+.card-step {
+    margin-top: 10px;
+}
+
+/* center aligned journey step */
+.card-step-center {
+    margin-top: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.card-left {
+    margin-top: 10px;
+    text-align: left;
+    color: #333;
+}
+
+/* arrival time */
+.card-arrival-time {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* transportation mode*/
+.card-transportation-mode{
+    font-weight: bold;
+    color: #333;
+}
+
+/* Add some hover effects */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Add a background color to the active card */
+.card.active {
+    background-color: #e9e9e9;
+}
+
+    </style>
+</head>
+<body>
+  {% for journey in journeys %}
+    <div class="card">
+      <div class="card-time">Departure {{ journey.departure_time }}</div>
+      {% for step in journey.journey %}
+        {% if step.transport_mode %}
+          <div class="card-left">
+            <span class="card-transportation-mode">{{ step.transport_mode }}</span> : <span class="card-destination">{{ step.destination_name }}</span>
+          </div>
+        {% else %}
+          <div class="card-step-center">
+            <span class="card-destination"> Walk to {{ step.destination_name }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+      <div class="card-arrival-time"> Arrival : {{ journey.arrival_time }}</div>
+      <div class="card-time">Duration {{ journey.duration_time }}</div>
+    </div>
+    {% endfor %}
+</body>
+</html>

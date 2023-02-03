@@ -1,0 +1,96 @@
+
+ <!-- -->
+ {% load static %}
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <title>Parici</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <style>
+     /* Override the default blue color of Bootstrap */
+     :root {
+     --primary: #f2f4f7;
+     }
+     /* Add some custom styles */
+     body {
+       background-image: url("https://rare-gallery.com/thumbs/4548695-eiffel-tower-france-paris.jpg");
+       background-repeat: no-repeat;
+       background-size: cover;
+     }
+     h1 {
+         font-size: 120px;
+         font-family: "Edwardian Script ITC";
+         color: #eee9e5;
+         letter-spacing: 2px;
+         text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+         transform: translateY(-40%);
+        }        
+
+     form {
+         background-color: rgb(243, 231, 231);
+         width: 500px;
+         margin: 0 auto;
+         text-align: left;
+         /* background-color: white; */
+         padding: 30px;
+         border-radius: 10px;
+         position: relative;
+         top: 20%;
+         transform: translateY(-20%);
+         z-index: 1;
+         animation: fa;
+         animation: fadeIn 1.5s;
+         
+        }
+@keyframes fadeIn {
+   from { opacity: 0; }
+   to { opacity: 1; }
+}
+     label {
+         font-size: 18px;
+         font-weight: bold;
+     }
+     /* Add some custom styles to the form inputs */
+     input[type="text"]:focus, input[type="datetime-local"]:focus, select:focus {
+         border: 2px solid #f5dbc9;
+         box-shadow: 0 0 0 0.2rem rgba(245, 201, 225, 0.25);
+     }
+     </style>
+   </head>
+   <body>
+    <div class="container">
+        <h1 class="text-center my-5">Parici</h1>
+        <form method="post" id="search_form" class="mx-auto">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="source_location">Source Location:</label>
+                <select name="source_location" id="source_location" class="form-control" required>
+                    {% for location in locations %}
+                        <option value="{{ location }}">{{ location }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="destination_location">Destination Location:</label>
+                <select name="destination_location" id="destination_location" class="form-control" required>
+                    {% for location in locations %}
+                        <option value="{{ location }}">{{ location }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="departure_time">Departure Time:</label>
+                <input type="time" name="departure_time" id="departure_time" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="arrival_time">Arrival Time:</label>
+                <input type="time" name="arrival_time" id="arrival_time" class="form-control">
+            </div>
+            <input type="submit" value="Search" class="btn btn-primary btn-block">
+        </form>
+    </div>
+  </body>
+</html> -->
+
+ 
