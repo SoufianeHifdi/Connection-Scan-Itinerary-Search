@@ -545,6 +545,7 @@ def connection_scan_algorithm_multires(timetable,source,target,source_time,targe
 
 		journey.reverse()
 		
+		# any solution found
 		if len(journey) == 0 :
 			print("no more journeys")
 			return res
