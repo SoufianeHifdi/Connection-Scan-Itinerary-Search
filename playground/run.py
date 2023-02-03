@@ -544,6 +544,11 @@ def connection_scan_algorithm_multires(timetable,source,target,source_time,targe
 				journey.append((None,None,f))
 
 		journey.reverse()
+		
+		if len(journey) == 0 :
+			print("no more journeys")
+			return res
+
 		arrival_time = compute_arrival_time(journey)
 		print(second_to_date(arrival_time))
 
@@ -642,13 +647,13 @@ def get_journeys(source_location,destination_location,target_departure_time, tar
 	
 	if cache.get('timetable') is None :  
 		timetable = create_timetable()
-		cache.set("timetable",timetable)
+		cache.set("timetable",timetable, 3600)
 	else :
 		timetable = cache.get("timetable")
 	
 	if len(routes) == 0:
 		routes = get_routes()
-		cache.set("routes", routes)
+		cache.set("routes", routes, 3600)
 	else :
 		cache.get("routes")
 	
@@ -686,7 +691,6 @@ def get_name_stops():
 
 
 def get_complete_name(stops_complete,connections,trips,routes):
-
 	geolocator = Nominatim(user_agent="geoapiExercises")
 
 	stops_name = dict()
@@ -762,28 +766,32 @@ def get_complete_name(stops_complete,connections,trips,routes):
 
 		stops_name[k] = name
 
-
 	return stops_name
 
 
-def get_list_of_stop_names():
+def get_dict_of_stop_names():
+	stops_name_dict = cache.get('stops_name_dict')
+	if stops_name_dict : 
+		return stops_name_dict
+	
 	timetable = tuple()
 	routes = list()
 	
 	if cache.get('timetable') is None :  
 		timetable = create_timetable()
-		cache.set("timetable",timetable)
+		cache.set("timetable",timetable, 3600)
 	else :
 		timetable = cache.get("timetable")
 	
 	if len(routes) == 0:
 		routes = get_routes()
-		cache.set("routes", routes)
+		cache.set("routes", routes, 3600)
 	else :
 		cache.get("routes")
 	
 	stops_complete = get_name_stops()
-	stops_name = get_complete_name(stops_complete,timetable[1],timetable[2],routes)
-	return list(stops_name.values())
+	stops_name_dict = get_complete_name(stops_complete,timetable[1],timetable[2],routes)
+	cache.set('stops_name_dict',stops_name_dict, 3600)
+	return stops_name_dict
 
 

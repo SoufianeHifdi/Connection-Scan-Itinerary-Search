@@ -26,7 +26,6 @@
          text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
          transform: translateY(-40%);
         }        
-
      form {
          background-color: rgb(243, 231, 231);
          width: 500px;
@@ -41,7 +40,6 @@
          z-index: 1;
          animation: fa;
          animation: fadeIn 1.5s;
-         
         }
 @keyframes fadeIn {
    from { opacity: 0; }
@@ -89,8 +87,37 @@
             </div>
             <input type="submit" value="Search" class="btn btn-primary btn-block">
         </form>
+        {% if error_message %}
+        <div class="popup" style="background-color: #ffffff; width: 420px;
+        padding: 30px 40px;
+        position: relative;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+        border-radius: 8px;"
+
+            <button id="close">&times;</button>
+            <p>
+                {{error_message}}
+            </p>
+        </div>
+        {% endif %}
     </div>
+    <script type="text/javascript">
+        window.addEventListener("load", function(){
+            setTimeout(
+                function open(event){
+                    document.querySelector(".popup").style.display = "block";
+                },
+                2000 
+            )
+        });
+        
+        
+        document.querySelector("#close").addEventListener("click", function(){
+            document.querySelector(".popup").style.display = "none";
+        });
+            </script>
   </body>
 </html> -->
 
- 

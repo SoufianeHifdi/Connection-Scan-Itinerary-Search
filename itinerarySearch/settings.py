@@ -130,5 +130,8 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
+        'OPTIONS': {
+            'server_max_value_length': 1024* 1024 * 1024
+        }
     }
 }
