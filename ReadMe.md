@@ -27,3 +27,17 @@ Ce projet nécessite de convertir les données GTFS et de les mettre dans une ba
 Il faut créer une base de données sur un serveur MySQL et fournir la configuration de celle-ci (port, mot de passe, etc.) à Django en modifiant le fichier `settings.py` qui se trouve dans le dossier `ItinerarySearch`.
 
 Le script qui communique avec le serveur est `playground/request_db.py`.
+
+### Librairies Python
+
+Pour ce projet, nous avons utilisé les librairies suivantes : 
+- cffi
+- cryptography
+- greenlet
+- mysql-connector-python
+- pkg-resources
+- protobuf
+- pycparser
+- PyMySQL
+- setuptools
+- SQLAlchemy
