@@ -426,7 +426,6 @@ def get_complete_name(stops_complete,connections,trips,routes):
 	stops_name = dict()
 	stops_route = dict()
 
-	print(stops_complete)
 	# REMPLIR STOPS ROUTES
 	for c in connections:
 
