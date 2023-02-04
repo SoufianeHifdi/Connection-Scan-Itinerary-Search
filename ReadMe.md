@@ -10,7 +10,7 @@ Les fichiers importants se trouvent dans le dossier playground:
   - `views.py` : C'est le gestionnaire de requêtes. Le fichier gère les requêtes HTTP et renvoie l'affichage des modèles Django.
 
 ### Accès à l'application :
-Pour l'instant, en lançant la commande `python manage.py runserver 0.0.0.0:8000`, l'application est Accessible sur http://127.0.0.1:8000/playground/test1/
+Pour l'instant, en lançant la commande `python manage.py runserver 0.0.0.0:8000`, l'application est accessible sur http://127.0.0.1:8000/playground/test1/
 
 ### Dataset  :
 
