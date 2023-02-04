@@ -426,6 +426,7 @@ def get_complete_name(stops_complete,connections,trips,routes):
 	stops_name = dict()
 	stops_route = dict()
 
+	print(stops_complete)
 	# REMPLIR STOPS ROUTES
 	for c in connections:
 
@@ -450,9 +451,12 @@ def get_complete_name(stops_complete,connections,trips,routes):
 		route_name = ""
 		
 		l = list(stops_route[k])
-		for ele in l:
-			route_name += ele + "/"
-
+		for i in range(len(l)):
+			ele = l[i]
+			if i == len(l)-1:
+				route_name += ele
+			else:
+				route_name += ele + "/"
 		#route_name = list(stops_route[k])[0]
 		
 		name = stops_complete[k][0] + " [" + route_name + "]"
