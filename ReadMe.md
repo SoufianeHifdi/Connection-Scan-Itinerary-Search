@@ -18,7 +18,7 @@ Les données utilisées sont au format GTFS d’Île-de-France Mobilité et sont
 
 Les données GTFS proviennent de chacun des 75 opérateurs de transport en commun franciliens, qui transmettent à Île-de-France Mobilités les horaires prévus de leurs lignes. La base de données contient les horaires des trains, métros, RER, tramways et bus qui circulent dans la région Île-de-France.
 
-Pour plus de détails, consultez la documentation d'Île-de-France Mobilité : [https://eu.ftp.opendatasoft.com/stif/GTFS/opendata_gtfs.pdf](https://eu.ftp.opendatasoft.com/stif/GTFS/opendata_gtfs.pdf
+Pour plus de détails, consultez la documentation d'Île-de-France Mobilité : [https://eu.ftp.opendatasoft.com/stif/GTFS/opendata_gtfs.pdf]
 
 ### Base de données :
 
