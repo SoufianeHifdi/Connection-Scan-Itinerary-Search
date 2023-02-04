@@ -14,7 +14,7 @@ Pour l'instant, en lançant la commande `python manage.py runserver 0.0.0.0:8000
 
 ### Dataset  :
 
-Les données utilisées sont au format GTFS d’Île-de-France Mobilité et sont utilisées pour ce projet. Le dataset contient plus de 1 900 lignes de transport, plus de 40 000 arrêts et environ 540 000 circulations sur l’ensemble de l’Île-de-France.
+Les données utilisées pour ce projet sont au format GTFS d’Île-de-France Mobilité. Le dataset contient plus de 1 900 lignes de transport, plus de 40 000 arrêts et environ 540 000 circulations sur l’ensemble de l’Île-de-France.
 
 Les données GTFS proviennent de chacun des 75 opérateurs de transport en commun franciliens, qui transmettent à Île-de-France Mobilités les horaires prévus de leurs lignes. La base de données contient les horaires des trains, métros, RER, tramways et bus qui circulent dans la région Île-de-France.
 
