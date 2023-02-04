@@ -8,7 +8,9 @@ Les fichiers importants se trouvent dans le dossier playground:
   - `landing_page.html` : Pour l'affichage du formulaire
   - `itinierary.html` : Pour l'affichage des itinéraires. Après le calcul des itinéraires, on affiche les 3 chemins calculés et on les classe par durée de trajet.
   - `views.py` : C'est le gestionnaire de requêtes. Le fichier gère les requêtes HTTP et renvoie l'affichage des modèles Django.
-  - Accessible sur `http://127.0.0.1:8000/playground/test1/`
+
+### Accès à l'application :
+Pour l'instant, en lançant la commande `python manage.py runserver 0.0.0.0:8000`, l'application est Accessible sur http://127.0.0.1:8000/playground/test1/
 
 ### Dataset  :
 
