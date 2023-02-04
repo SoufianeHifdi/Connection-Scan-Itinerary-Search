@@ -459,7 +459,7 @@ def get_complete_name(stops_complete,connections,trips,routes):
 				route_name += ele + "/"
 		#route_name = list(stops_route[k])[0]
 		
-		name = stops_complete[k][0] + " [" + route_name + "]"
+		name = stops_complete[k] + " [" + route_name + "]"
 		stops_name[k] = name
 
 	return stops_name
