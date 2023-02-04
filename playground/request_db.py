@@ -39,12 +39,6 @@ def get_stops(connection):
     res = connection.execute(db.text(query_sql))
     return res
 
-def get_stops_complete(connection):
-    query_sql = """SELECT stop_id,stop_name,stop_lat,stop_lon FROM stops"""
-    tags_res_list = connection.execute(db.text(query_sql)).fetchall()
-    return tags_res_list
-
-
 #################################################### TRIPS #############################################################
 
 def get_trips(connection):
