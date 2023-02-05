@@ -15,12 +15,16 @@ class perfTest(TestCase):
 
 
         target_time = list()
+        target_time.append(utl.date_to_second('06:30:00'))
         target_time.append(utl.date_to_second('07:00:00'))
+        target_time.append(utl.date_to_second('07:30:00'))
         target_time.append(utl.date_to_second('08:00:00'))
+        target_time.append(utl.date_to_second('08:30:00'))
         target_time.append(utl.date_to_second('09:00:00'))
+        target_time.append(utl.date_to_second('09:30:00'))
         target_time.append(utl.date_to_second('10:00:00'))
-        target_time.append(utl.date_to_second('11:00:00'))
-        target_time.append(utl.date_to_second('12:00:00'))
+        # target_time.append(utl.date_to_second('11:00:00'))
+        # target_time.append(utl.date_to_second('12:00:00'))
         # target_time.append(utl.date_to_second('13:00:00'))
         # target_time.append(utl.date_to_second('14:00:00'))
         # target_time.append(utl.date_to_second('15:00:00'))
@@ -32,7 +36,7 @@ class perfTest(TestCase):
         intervals = []
         journeys = []
         times = []
-        interval = 1#hour
+        interval = 0.5#hour
         for ele in target_time:
             start_time = time.time()
             RES = rn.connection_scan_algorithm_multires(timetable,source,target,source_time,ele,10000)
@@ -41,7 +45,7 @@ class perfTest(TestCase):
             times.append((time.time() - start_time))
             journeys.append(len(RES))
             intervals.append(interval)
-            interval +=1
+            interval +=0.5
             # print("number of journeys : " + str(len(RES)))
 
         # plt.plot(intervals, journeys)
@@ -50,21 +54,22 @@ class perfTest(TestCase):
         # plt.show()
         # plt.savefig("journey_plot.png")
             # print(times,journeys,intervals)
-        fig, ax1 = plt.subplots()
+            fig, ax1 = plt.subplots()
 
-        color = 'tab:red'
-        ax1.set_xlabel('Time Interval')
-        ax1.set_ylabel('Number of Journeys', color=color)
-        ax1.plot(intervals, journeys, color=color)
-        ax1.tick_params(axis='y', labelcolor=color)
+            color = 'tab:red'
+            ax1.set_xlabel('Time Interval')
+            ax1.set_ylabel('Number of Journeys', color=color)
+            ax1.plot(intervals, journeys, color=color)
+            ax1.tick_params(axis='y', labelcolor=color)
 
-        ax2 = ax1.twinx() 
+            ax2 = ax1.twinx() 
 
-        color = 'tab:blue'
-        ax2.set_ylabel('Execution Time (Seconds)', color=color)  
-        ax2.plot(intervals, times, color=color)
-        ax2.tick_params(axis='y', labelcolor=color)
+            color = 'tab:blue'
+            ax2.set_ylabel('Execution Time (Seconds)', color=color)  
+            ax2.plot(intervals, times, color=color)
+            ax2.tick_params(axis='y', labelcolor=color)
 
-        fig.tight_layout()  
-        plt.show()  
-        plt.savefig("journey_plot2.png")
+            fig.tight_layout()  
+            plt.savefig("journey_plot"+str(interval)+".png")
+            plt.show()  
+            # plt.savefig("journey_plot"+interval+".png")
