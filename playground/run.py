@@ -211,7 +211,7 @@ def create_journeys(output,stops,trips,routes,source):
 
 
 def get_journeys(source_location,destination_location,target_departure_time, target_arrival_time):
-	NB_JOURNEYS = 3
+	NB_JOURNEYS = 50
 	timetable = tuple()
 	routes = list()
 	
