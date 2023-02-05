@@ -80,7 +80,7 @@ def connection_scan_algorithm_multires(timetable,source,target,source_time,targe
 		counter_security = 0
 		t_seen = set()
 
-		while J[t] != (None,None,None) and counter_security < 200:
+		while J[t] != (None,None,None) and counter_security < 400:
 			t_seen.add(t)
 			journey.append(J[t])
 			
@@ -92,7 +92,7 @@ def connection_scan_algorithm_multires(timetable,source,target,source_time,targe
 			counter_security += 1
 
 		# loop detected
-		if counter_security >= 200:
+		if counter_security >= 400:
 			print("skipped - loop detected")
 			journey.reverse()
 			print(journey)
